@@ -1,0 +1,143 @@
+.my-orders-page {
+  padding: 2rem 1rem;
+  max-width: 1100px;
+  margin: auto;
+  background-color: #f6f6f6;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.my-orders-page h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.order-card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease-in-out;
+  border: 1px solid #eaeaea;
+}
+
+.order-card:hover {
+  transform: translateY(-5px);
+}
+
+.order-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+  margin-bottom: 1.2rem;
+}
+
+.order-info p {
+  margin: 0.3rem 0;
+  color: #555;
+  font-size: 0.98rem;
+}
+
+.order-info .status {
+  color: #ff6600;
+  font-weight: 600;
+}
+
+.order-info .paid {
+  color: #28a745;
+}
+
+.order-info .unpaid {
+  color: #dc3545;
+}
+
+.order-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.order-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #fdfdfd;
+  border-radius: 12px;
+  border: 1px solid #f1f1f1;
+  align-items: center;
+}
+
+.order-item img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.order-item-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.order-item-details p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.order-item-details p.name {
+  font-weight: 600;
+  color: #f22005;
+}
+
+/* Fallback message */
+.no-orders {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #888;
+  padding: 2rem 0;
+}
+.track-order-btn {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #ff6600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.track-order-btn:hover {
+  background-color: #e25500;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .order-card {
+    padding: 1rem;
+  }
+
+  .order-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .order-item img {
+    width: 100%;
+    height: auto;
+  }
+}
+

@@ -1,0 +1,161 @@
+.login-popup {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: #00000090; /* Dark overlay */
+  display: grid;
+}
+
+.login-popup-container {
+  place-self: center;
+  width: clamp(300px, 23vw, 400px); /* Responsive width with min/max */
+  color: #808080;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 25px 30px;
+  border-radius: 8px;
+  font-size: 14px;
+  animation: fadeIn 0.5s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.login-popup-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+}
+
+.login-popup-title h2 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.login-popup-title img {
+  width: 16px;
+  cursor: pointer;
+}
+
+.login-popup-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.login-popup-inputs input {
+  outline: none;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #c9c9c9;
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+  color: #333;
+}
+
+.login-popup-inputs input::placeholder {
+  color: #999;
+}
+
+.login-popup-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: #ff6347; /* Tomato color */
+  color: white;
+  border: none; /* Fixed typo: 'nonw' to 'none' */
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-popup-inputs button:hover {
+  background-color: #e5533d;
+}
+
+/* Style for error and success messages */
+.login-popup-message {
+  margin: 10px 0 0;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.login-popup-message.error {
+  color: #d32f2f;
+  background-color: #ffebee;
+}
+
+.login-popup-message.success {
+  color: #2e7d32;
+  background-color: #e8f5e9;
+}
+
+.login-popup-condition {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: -10px; /* Adjusted for better alignment */
+}
+
+.login-popup-condition input {
+  width: auto;
+  margin-top: 2px; /* Fine-tuned alignment */
+}
+
+.login-popup-condition p {
+  font-size: 12px;
+  color: #666;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.login-popup-toggle {
+  font-size: 12px;
+  color: #666;
+  margin: 0;
+  text-align: center;
+}
+
+.login-popup-toggle span {
+  color: #ff6347;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.login-popup-toggle span:hover {
+  text-decoration: underline;
+}
+
+/* Animation for fade-in effect */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .login-popup-container {
+    width: 90%; /* Full width on small screens */
+    padding: 20px;
+  }
+
+  .login-popup-title h2 {
+    font-size: 18px;
+  }
+
+  .login-popup-inputs input,
+  .login-popup-container button {
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,211 @@
+/* Ensure the header-section spans the full viewport width */
+.header-section {
+    width: 100%;
+    margin: 0;
+}
+
+/* Center the header content while keeping it full-width */
+.header-wrapper {
+    max-width: 1200px; /* Fixed max-width for consistency */
+    margin: 0 auto; /* Center the header */
+    position: relative;
+}
+
+/* Style the h1 outside the header image */
+.header-wrapper h1 {
+    font-size: clamp(24px, 4vw, 48px); /* Slightly tighter range for consistency */
+    color: #333;
+    text-align: center;
+    margin: 20px 0;
+    padding: 0 20px;
+}
+
+.header {
+    height: clamp(350px, 30vw, 450px); /* Reduced range to make height more static */
+    margin: 30px 0;
+    background: url('/header_img.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: #f0f0f0;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.header-contents {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: clamp(10px, 1.5vw, 20px);
+    max-width: 400px; /* Fixed width for static alignment */
+    bottom: 40px;
+    left: 50px;
+    animation: fadeIn 2s;
+}
+
+.header-contents h2 {
+    color: white;
+    font-size: clamp(24px, 4vw, 40px); /* Tighter range for more consistent font size */
+}
+
+.header-contents p {
+    color: white;
+    font-size: clamp(14px, 1vw, 18px); /* Adjusted for better readability */
+}
+
+.header-contents button {
+    background-color: #ebd4d3e8;
+    color: black;
+    border: none;
+    padding: clamp(8px, 1vw, 15px) clamp(15px, 2vw, 30px); /* Adjusted for consistency */
+    font-size: clamp(12px, 1vw, 16px);
+    cursor: pointer;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+/* Responsive Design */
+@media (max-width: 1050px) {
+    .header-wrapper {
+        max-width: 900px;
+    }
+
+    .header {
+        height: clamp(320px, 32vw, 400px); /* Slightly tighter range */
+    }
+
+    .header-contents {
+        max-width: 380px;
+        bottom: 35px;
+        left: 40px;
+    }
+
+    .header-contents h2 {
+        font-size: clamp(22px, 3.8vw, 36px);
+    }
+
+    .header-contents p {
+        font-size: clamp(13px, 0.9vw, 16px);
+    }
+
+    .header-contents button {
+        padding: clamp(7px, 0.9vw, 12px) clamp(12px, 1.8vw, 25px);
+        font-size: clamp(11px, 0.9vw, 14px);
+    }
+
+    .header-wrapper h1 {
+        font-size: clamp(22px, 4vw, 40px);
+    }
+}
+
+@media (max-width: 768px) {
+    .header-wrapper {
+        max-width: 700px;
+    }
+
+    .header {
+        height: clamp(280px, 35vw, 350px); /* Adjusted for smaller screens */
+    }
+
+    .header-contents {
+        max-width: 340px;
+        bottom: 30px;
+        left: 30px;
+    }
+
+    .header-contents h2 {
+        font-size: clamp(20px, 4vw, 32px);
+    }
+
+    .header-contents p {
+        font-size: clamp(12px, 1.5vw, 14px);
+    }
+
+    .header-contents button {
+        padding: clamp(6px, 0.8vw, 10px) clamp(10px, 1.5vw, 20px);
+        font-size: clamp(10px, 1.5vw, 12px);
+    }
+
+    .header-wrapper h1 {
+        font-size: clamp(20px, 4vw, 36px);
+    }
+}
+
+@media (max-width: 480px) {
+    .header-wrapper {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    .header {
+        height: clamp(250px, 40vw, 300px); /* Adjusted for smaller screens */
+    }
+
+    .header-contents {
+        max-width: 300px;
+        bottom: 20px;
+        left: 20px;
+    }
+
+    .header-contents h2 {
+        font-size: clamp(18px, 5vw, 28px);
+    }
+
+    .header-contents p {
+        font-size: clamp(11px, 2vw, 13px);
+    }
+
+    .header-contents button {
+        padding: clamp(5px, 1vw, 8px) clamp(8px, 1.5vw, 15px);
+        font-size: clamp(9px, 2vw, 11px);
+    }
+
+    .header-wrapper h1 {
+        font-size: clamp(18px, 5vw, 30px);
+    }
+}
+
+@media (max-width: 360px) {
+    .header-wrapper {
+        max-width: 100%;
+        padding: 0 5px;
+    }
+
+    .header {
+        height: clamp(220px, 45vw, 280px); /* Adjusted for very small screens */
+    }
+
+    .header-contents {
+        max-width: 280px;
+        bottom: 15px;
+        left: 15px;
+    }
+
+    .header-contents h2 {
+        font-size: clamp(16px, 5vw, 24px);
+    }
+
+    .header-contents p {
+        font-size: clamp(10px, 2vw, 12px);
+    }
+
+    .header-contents button {
+        padding: clamp(4px, 1vw, 7px) clamp(6px, 1.5vw, 12px);
+        font-size: clamp(8px, 2vw, 10px);
+    }
+
+    .header-wrapper h1 {
+        font-size: clamp(16px, 5vw, 28px);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
