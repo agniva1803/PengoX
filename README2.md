@@ -67,41 +67,51 @@ npm run server
 
 🍱 Food Gallery
 🥗 Salads
-![Screenshot 2025-04-21 233244](https://github.com/user-attachments/assets/f2d62f09-cbd6-4200-b901-0ff001addd9b)
+![Screenshot 2025-04-21 233244](https://github.com/user-attachments/assets/8baeb20c-f37f-48e6-ac6e-9d2bd441cee9)
+
 
 
 
 🌯 Rolls
-![Screenshot 2025-04-21 233330](https://github.com/user-attachments/assets/6cc5ab61-9aeb-40ae-a664-96fc17941ace)
+![Screenshot 2025-04-21 233330](https://github.com/user-attachments/assets/889b975f-45dc-4f3b-bae3-350bcc09315d)
+
 
 
 
 🍨 Deserts
-![Screenshot 2025-04-21 233430](https://github.com/user-attachments/assets/cd9b472d-55cd-409b-8413-6d961a15e2a0)
+![Screenshot 2025-04-21 233430](https://github.com/user-attachments/assets/adf705eb-bd89-48fc-ace1-282b9ddcedf3)
+
+
 
 
 
 🥪 Sandwiches
-![Screenshot 2025-04-21 233501](https://github.com/user-attachments/assets/0e573c75-7d6b-4278-aa3d-ed0034af1221)
+![Screenshot 2025-04-21 233501](https://github.com/user-attachments/assets/869abda8-21f1-4e54-ac40-f77dbfa4bdfa)
+
+
 
 
 
 🎂 Cakes
-![Screenshot 2025-04-21 233555](https://github.com/user-attachments/assets/82d33ac3-e89b-4804-82b5-8ede0b2c4923)
+![Screenshot 2025-04-21 233555](https://github.com/user-attachments/assets/f2e4296f-099b-4765-86af-fe6c48059a89)
+
 
 
 
 🥬 Pure Veg
-![Screenshot 2025-04-21 233631](https://github.com/user-attachments/assets/4873c972-7cc7-4126-af7b-5c90f42f28db)
+![Screenshot 2025-04-21 233631](https://github.com/user-attachments/assets/3b1d5303-3057-4026-8750-21955e969cf0)
+
 
 
 
 🍝 Pasta
-![Screenshot 2025-04-21 233742](https://github.com/user-attachments/assets/c3852bca-3774-4e11-9b19-32b3e5cba820)
+![Screenshot 2025-04-21 233742](https://github.com/user-attachments/assets/e0fce108-e4b9-49b1-bd0d-a1137cbca5a5)
+
+
 
 
 🍜 Noodles
-![Screenshot 2025-04-21 233822](https://github.com/user-attachments/assets/88b53f4c-3d71-477f-ba76-fac2bba52c95)
+![Screenshot 2025-04-21 233822](https://github.com/user-attachments/assets/cf936aa4-cae1-47c8-8da3-2288358339d4)
 
 
 🧑‍💻 Contributing
