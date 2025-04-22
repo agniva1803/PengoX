@@ -1,0 +1,97 @@
+.orders-page {
+    padding: 4rem 4rem 4rem; /* Increased top padding to 4rem to push content down */
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative; /* Ensure it respects its own space */
+}
+
+.orders-page h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    color: #333;
+}
+
+.no-orders {
+    text-align: center;
+    color: #777;
+    font-size: 1.1rem;
+}
+
+.orders-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+    margin-top: 3rem; /* Retain this for additional spacing */
+}
+
+.order-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 200px;
+    overflow: auto;
+}
+
+.order-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.order-header img {
+    width: 48px;
+    height: 48px;
+}
+
+.order-items ul {
+    margin: 0.5rem 0;
+    padding-left: 1.2rem;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.order-footer {
+    margin-top: auto;
+    text-align: right;
+}
+
+.order-footer button {
+    background: #4caf50;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.order-footer button:hover {
+    background: #388e3c;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+    .orders-page {
+        padding: 2rem 1rem 1rem; /* Adjusted padding for smaller screens */
+    }
+    .order-header img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 400px) {
+    .orders-page h2 {
+        font-size: 1.5rem;
+    }
+    .order-header img {
+        width: 32px;
+        height: 32px;
+    }
+}

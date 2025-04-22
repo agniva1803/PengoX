@@ -1,0 +1,206 @@
+body .sidebar {
+    width: 160px; /* Fixed width */
+    min-width: 160px; /* Prevent shrinking */
+    height: calc(100vh - 60px); /* Dynamically adjusted for navbar height */
+    background-color: #f4f4f4;
+    border-right: 1.5px solid #a9a9a9;
+    position: absolute; /* Keeps it aligned with navbar */
+    top: 114px; /* Matches navbar height */
+    left: 0;
+    overflow: auto;
+    z-index: 999; /* Just below navbar */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ensure proper layout at different screen sizes */
+@media (max-width:1024px) {
+    body .sidebar {
+        width: 160px;
+        height: calc(100vh - 60px); /* Ensure consistency */
+        top: 100px; /* Align with navbar */
+        position: absolute;
+    }
+}
+
+@media (max-width: 768px) {
+    body .sidebar {
+        width: 160px; /* Keep width same */
+        height: calc(100vh - 60px);
+        top: 55px; /* Navbar consistency */
+        position: absolute;
+    }
+}
+
+.sidebar-options {
+    width: 100%;
+    flex-grow: 1;
+    overflow-y: auto; /* Allow vertical scroll within options */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    padding: 10px 0px; /* Padding inside the options area */
+    background-color: #fff; /* White background for options */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left */
+    gap: 10px;
+    box-sizing: border-box;
+    padding-top: 45px; /* Allow for auto spacing at the top */
+}
+
+/* Individual Option */
+.sidebar-option {
+    display: flex;
+    align-items: center; /* Vertically center icon and text */
+    justify-content: flex-start; /* Align items to the left */
+    gap: 10px; /* Space between icon and text */
+    padding: 12px 15px; /* Padding within each option */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%; /* Make option take full available width */
+    box-sizing: border-box;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
+}
+
+/* Icon Styling */
+.sidebar-option img,
+.sidebar-option i { /* Add other selectors if needed */
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0; /* Prevent icon shrinking */
+    /* --- Keep your original icon styles below --- */
+    border-radius: 50%;
+    object-fit: cover;
+    background: linear-gradient(135deg, #e0e0e0, #ffffff);
+    padding: 4px;
+    /* --- End original icon styles --- */
+}
+
+/* Text Styling - Ensure text is VISIBLE by default */
+.sidebar-option p {
+    display: inline; /* Make sure text is visible */
+    margin: 0;
+    font-size: 15px;
+    color: rgb(249, 45, 9);
+    font-weight: 500;
+    transition: color 0.3s;
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide text that overflows the container */
+    text-overflow: ellipsis; /* Show "..." if text overflows */
+}
+
+/* Hover Effect */
+.sidebar-option:hover {
+    background: linear-gradient(135deg, #e1a3a3, #d23d3d); /* Change background on hover */
+    color: #fff; /* Apply hover color to text within the option */
+    border-left: 4px solid #ff3333; /* Optional: left border on hover */
+    box-shadow: 0 4px 10px rgba(255, 77, 77, 0.2); /* Optional: shadow on hover */
+    transform: translateX(3px); /* Optional: slight scale effect on hover */
+}
+.sidebar-option:hover p {
+    color: #6a0a0a;
+}
+
+/* Hover Effect for Icons */
+.sidebar-option:hover img,
+.sidebar-option:hover i {
+    transform: scale(1.1);/* Apply hover color directly to icon if using font */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0, 0.15); /* Optional: shadow on hover */
+    /* For images, you might need a filter or different image source on hover */
+}
+.sidebar-option.active{
+    background-color: #fff0ed;
+    border-color : tomato;
+}
+
+/* --- Main Content Area (Default for wide screen) --- */
+/* IMPORTANT: Ensure you have an element with class="main-content" */
+.main-content {
+    margin-left: 160px; /* Match the default sidebar width (adjust if you changed width) */
+    width: calc(100% - 160px); /* Adjust width (adjust if you changed width) */
+    padding: 20px; /* Example padding */
+    box-sizing: border-box;
+    transition: margin-left 0.3s ease, width 0.3s ease; /* Smooth transition */
+}
+
+
+    /* Allow text to be fully visible if it fits */
+    .sidebar-option p {
+         overflow: visible; /* Allow text to show fully */
+         text-overflow: clip; /* Don't show ellipsis */
+    }
+
+
+/* Remove or repurpose the very small screen media query */
+/*
+@media (max-width: 600px) {
+     /* You likely don't need this specific rule anymore unless you want
+        a third state (e.g., the icon-only state) on very small screens * /
+}
+*/
+/* === Animations === */
+@keyframes slideInSidebar {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInOption {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* === Sidebar Container === */
+body .sidebar {
+    animation: slideInSidebar 0.5s ease forwards;
+}
+
+/* === Sidebar Options Animation === */
+.sidebar-option {
+    animation: fadeInOption 0.4s ease forwards;
+    animation-delay: 0.2s;
+    opacity: 0; /* Start hidden, shown after animation */
+}
+
+/* Slight delay between each option (optional) */
+.sidebar-option:nth-child(1) { animation-delay: 0.2s; }
+.sidebar-option:nth-child(2) { animation-delay: 0.3s; }
+.sidebar-option:nth-child(3) { animation-delay: 0.4s; }
+.sidebar-option:nth-child(4) { animation-delay: 0.5s; }
+/* Add more as needed */
+
+/* === Hover Enhancements (already present, just smooth transitions) === */
+.sidebar-option,
+.sidebar-option p,
+.sidebar-option img,
+.sidebar-option i {
+    transition: all 0.3s ease;
+}
+
+/* Main content can also animate if needed */
+.main-content {
+    transition: margin-left 0.3s ease, width 0.3s ease, opacity 0.4s ease;
+    animation: fadeInOption 0.6s ease;
+}
+
+
+
+
+
+
+
+

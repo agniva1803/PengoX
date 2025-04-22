@@ -1,36 +1,35 @@
 import React from 'react';
-import Navbar from './components/Navbar/Navbar';
-import { Route, Routes } from 'react-router-dom';
-import Home from './pages/Home/Home';
-import Cart from './pages/Cart/Cart';
-import PlaceOrder from './pages/PlaceOrder/PlaceOrder';
-import Footer from './components/Footer/Footer';
-import LoginPopUp from './components/LoginPopUp/LoginPopUp';
-import StoreContextProvider from './Context/StoreContext'; // Updated path with correct casing
-import Verify from './pages/Verify/Verify';
-import MyOrders from './pages/MyOrders/MyOrders'; // Updated path with correct casing
+import './index.css';
+import Navbar from "./components/Navbar/Navbar";
+import Sidebar from "./components/Sidebar/Sidebar";
+import { Routes, Route } from "react-router-dom";
+import Orders from "./pages/Orders/Orders";
+import List from "./pages/List/List";
+import Add from "./pages/Add/Add";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const App = () => {
-  const [showLogin, setShowLogin] = React.useState(false);
+  const url = "http://localhost:4000"; // Backend URL
 
   return (
-    <StoreContextProvider>
-      <div>
-        {showLogin ? <LoginPopUp setShowLogin={setShowLogin} /> : null}
-        <div className='app'>
-          <Navbar setShowLogin={setShowLogin} />
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/cart' element={<Cart />} />
-            <Route path='/order' element={<PlaceOrder />} />
-            <Route path='/verify' element={<Verify />} />
-            <Route path ='/myorders' element={<MyOrders />} />
-          </Routes>
-          <Footer />
-        </div>
+    <div>
+      <ToastContainer />
+      <Navbar />
+      <hr />
+      <div className="app-content">
+        <Sidebar />
+        <Routes>
+          <Route path="/add" element={<Add url={url} />} />
+          <Route path="/list" element={<List url={url} />} />
+          <Route path="/orders" element={<Orders url={url} />} />
+        </Routes>
       </div>
-    </StoreContextProvider>
+    </div>
   );
 };
 
 export default App;
+
+
 

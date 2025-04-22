@@ -1,0 +1,141 @@
+.list {
+    width: 100%;
+    padding: 2rem;
+    background-color: #f8f8f8;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers content horizontally within the available space */
+    margin-left: 160px; /* Matches the sidebar width to align with .main-content */
+    margin-right: auto; /* Allows centering within the remaining space */
+    max-width: calc(100% - 160px); /* Limits width to the space after sidebar */
+    box-sizing: border-box; /* Ensures padding is included in width calculation */
+  }
+  
+  .list > p {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #1a1a1a;
+    text-align: center; /* Centers the title text */
+    width: 100%; /* Ensures the title takes full available width */
+    padding-left: 1rem; /* Adds slight padding to avoid clipping */
+    box-sizing: border-box; /* Includes padding in width */
+    white-space: nowrap; /* Prevents text wrapping */
+    overflow: hidden; /* Hides overflow */
+    text-overflow: ellipsis; /* Shows "..." if text overflows */
+  }
+  
+  .list-table {
+    width: 90%; /* Adjusted width to fill more space and center better within the remaining space */
+    max-width: 900px; /* Adjusted max-width for better fit */
+    margin: 0 auto; /* Centers the table within the .list container */
+    overflow-x: hidden; /* Removes horizontal scrollbar */
+    overflow-y: auto; /* Allows vertical scrolling if needed (optional) */
+  }
+  
+  .list-table-format {
+    display: grid;
+    grid-template-columns: 120px 1fr 1fr 100px 100px; /* Fixed grid structure */
+    align-items: center;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    gap: 1rem;
+    transition: all 0.3s ease;
+    width: 100%; /* Ensure consistent width within the table */
+  }
+  
+  .list-table-format.title {
+    background: #f1f1f1;
+    font-weight: bold;
+  }
+  
+  .list-table-format img {
+    width: 100px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    justify-self: center;
+  }
+  
+  .list-table-format p,
+  .list-table-format b {
+    font-size: 1rem;
+    color: #333;
+    text-align: center;
+  }
+  
+  .delete {
+    padding: 0.5rem 1rem;
+    background-color: #ff4d4f;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s ease;
+    width: 100%; /* Full width in card layout */
+    justify-self: center;
+  }
+  
+  .delete:hover {
+    background-color: #ff1a1f;
+  }
+  
+  /* Responsive Design for Smaller Screens */
+  @media (max-width: 768px) {
+    .list {
+      margin-left: 160px; /* Maintain sidebar offset */
+      max-width: calc(100% - 160px); /* Adjust for sidebar */
+      padding-left: 0.5rem; /* Reduced padding for smaller screens */
+    }
+  
+    .list > p {
+      font-size: 1.5rem; /* Reduced font size for smaller screens */
+      padding-left: 0.5rem; /* Adjusted padding */
+    }
+  
+    .list-table {
+      width: 100%; /* Increased width for smaller screens */
+      max-width: 540px; /* Further reduced max-width */
+      overflow-x: hidden; /* Removes horizontal scrollbar */
+    }
+  
+    .list-table-format {
+      grid-template-columns: 200px 1fr 1fr 80px 80px; /* Adjusted for smaller screens */
+      padding: 0.5rem;
+    }
+  
+    .list-table-format img {
+      width: 100px;
+      height: 70px; /* Reduced image size */
+    }
+  
+    .list-table-format p,
+    .list-table-format b {
+      font-size: 1.0rem; /* Adjusted text size */
+    }
+  
+    .delete {
+      padding: 0.4rem 1.0rem; /* Adjusted padding */
+      font-size: 1.0rem; /* Adjusted font size */
+    }
+  }
+  
+  /* Ensure full-screen layout remains intact on larger screens */
+  @media (min-width: 769px) {
+    .list {
+      margin-left: 160px; /* Consistent margin for larger screens */
+    }
+  
+    .list-table {
+      width: 90%; /* Consistent width for larger screens */
+      overflow-x: hidden; /* Removes horizontal scrollbar */
+    }
+  
+    .list-table-format {
+      grid-template-columns: 120px 1fr 1fr 100px 100px !important;
+    }
+  }

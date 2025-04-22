@@ -1,259 +1,74 @@
 .navbar {
-    max-width: 1200px; /* Prevents excessive resizing */
-    width: 100%;
-    margin: auto;
-    padding: 20px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: nowrap; /* Prevents items from wrapping */
-    padding-left: 0;
+    padding: 8px 4%;
+    position: fixed; /* Fixed positioning for the navbar */
+    width: 100%; /* Ensure navbar takes full width */
+    top: 0; /* Always at the top */
+    z-index: 1000; /* Ensure the navbar stays above other content */
+    background-color: #fff; /* Optional: background color for navbar */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
 }
 
 .navbar .logo {
-    width: 150px;
-    margin-left: 0;
-    padding-left: 0;
+    width: max(10%, 80px);
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    text-decoration: none;
 }
 
-/* Navbar Menu */
-.navbar-menu {
+/* Profile and other navbar content remain unchanged */
+
+
+.navbar .profile {
     display: flex;
-    list-style: none;
-    gap: 20px;
-    color: #49557e;
-    font-size: 18px;
-    flex-wrap: nowrap; /* Prevents menu from shifting */
-}
-
-.navbar-menu li {
-    white-space: nowrap; /* Ensures menu items don’t break */
+    align-items: center;
+    gap: 10px;
     cursor: pointer;
 }
 
-/* Right Section (Cart + Button) */
-.navbar-right {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    flex-wrap: nowrap; /* Prevents wrapping */
+/* Profile Image Styling - Perfect Circular Avatar */
+/* Profile Image Styling - Enhanced */
+.navbar .profile img {
+    width: 45px; /* Adjusted size */
+    height: 45px; /* Maintain aspect ratio */
+    border-radius: 50%; /* Makes it circular */
+    object-fit: cover; /* Ensures it doesn't stretch */
+    border: 2px solid #ccc; /* Slightly darker border for contrast */
+    background: linear-gradient(135deg, #e0e0e0, #ffffff); /* Subtle gradient for depth */
+    padding: 3px; /* Extra space for a cleaner look */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Soft shadow for a lifted effect */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth hover effect */
 }
 
-/* Basket Position */
-.navbar-basket {
-    position: relative;
-    display: flex;
-    align-items: center;
-    text-decoration: none; /* Remove underline from Link */
-    cursor: pointer; /* Make it look clickable */
+/* Hover Effect (Premium Look) */
+.navbar .profile img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); /* More depth on hover */
 }
-
-/* Add hover effect for basket */
-.navbar-basket:hover {
-    opacity: 0.8; /* Subtle hover effect */
-}
-
-/* Fix the notification dot position and style */
-.navbar-basket .dot {
-    position: absolute;
-    width: 18px; /* Increased size for better visibility */
-    height: 18px;
-    background: tomato;
-    border-radius: 100%;
-    top: -8px; /* Adjusted position */
-    right: -8px;
-    display: flex; /* Center the number */
-    align-items: center;
-    justify-content: center;
-    color: white; /* Text color for the number */
-    font-size: 12px; /* Font size for the number */
-    font-weight: bold;
-}
-
-/* Button Styling */
-.navbar button {
-    background: transparent;
-    font-size: 16px;
-    color: #49557e;
-    border: 1px solid tomato;
-    padding: 10px 30px;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: 0.3s;
-    min-width: 80px; /* Prevents button from shrinking */
-}
-
-/* Button Hover Effect */
-.navbar button:hover {
-    background: #fff4f2;
-    color: tomato;
-}
-
-/* Active Menu Item */
-.navbar .active {
-    padding-bottom: 2px;
-    border-bottom: 2px solid #49557e;
-}
-/* Profile Styling */
-.navbar-profile {
-    position: relative;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.navbar-profile:hover {
-    transform: scale(1.1); /* Slight zoom effect on hover */
-}
-
-.navbar-profile img {
-    width: 25px; /* Reduced from 35px to make it smaller */
-    height: 25px; /* Reduced from 35px to make it smaller */
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #ff6347; /* Coral border for a pop of color */
-    box-shadow: 0 2px 5px rgba(218, 7, 7, 0.1);
-    transition: box-shadow 0.3s ease;
-}
-
-.navbar-profile:hover img {
-    box-shadow: 0 4px 10px rgba(255, 99, 71, 0.3); /* Enhanced shadow on hover */
-}
-
-.nav-profile-dropdown {
-    position: absolute;
-    top: 30%;
-    right: 0;
-    background: linear-gradient(135deg, #e4dcdc, #fefefe); /* Subtle gradient background */
-    border: 1px solid #120606;
-    border-radius: 10px; /* Rounded corners for a softer look */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-    display: none;
-    min-width: 180px;
-    padding: 5px 0;
-    z-index: 1000;
-    animation: fadeIn 0.2s ease-in-out;
-}
-
-.navbar-profile:hover .nav-profile-dropdown {
-    display: block;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.nav-profile-dropdown li {
-    list-style: none;
-    padding: 10px 15px; /* Slightly reduced padding */
-    display: flex;
-    align-items: center;
-    gap: 12px; /* Slightly reduced gap */
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.nav-profile-dropdown li:hover {
-    background: linear-gradient(90deg, #a49f9f, #cdc0c0); /* Gradient hover effect */
-    border-radius: 5px;
-}
-
-.nav-profile-dropdown li img {
-    width: 18px; /* Reduced from 22px */
-    height: 18px; /* Reduced from 22px */
-    filter: brightness(0.9); /* Slight tint for icons */
-    transition: filter 0.3s ease;
-}
-
-.nav-profile-dropdown li:hover img {
-    filter: brightness(1.2); /* Brighter icons on hover */
-}
-
-.nav-profile-dropdown li p {
-    font-size: 14px; /* Reduced from default (likely 16px) to make text smaller */
-    margin: 0;
-    color: #ef0d0d;
-}
-
-.nav-profile-dropdown hr {
-    border: 0;
-    border-top: 1px solid #d7cfcf;
-    margin: 5px 0;
-    opacity: 0.5;
-}
-
-/* 🔹 Responsive Design 🔹 */
-
-/* For Tablets */
+/* Responsive Adjustments */
 @media (max-width: 1024px) {
-    .navbar .logo {
-        width: 120px;
-    }
-
-    .navbar-menu {
-        gap: 15px;
-        font-size: 16px;
-    }
-
-    .navbar-right {
-        gap: 20px;
-    }
-
-    .navbar button {
-        padding: 8px 20px;
-        font-size: 14px;
+    .navbar .profile img {
+        width: 40px;
+        height: 40px;
     }
 }
 
-/* For Mobile Devices */
 @media (max-width: 768px) {
     .navbar {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
+        padding: 8px 2%;
     }
-
-    .navbar .logo {
-        width: 100px;
-    }
-
-    .navbar-menu {
-        gap: 8px;
-        font-size: 14px;
-        justify-content: center;
-    }
-
-    .navbar-right {
-        gap: 15px;
-    }
-
-    .navbar button {
-        padding: 6px 12px;
-        font-size: 12px;
+    .navbar .profile img {
+        width: 38px;
+        height: 38px;
     }
 }
 
-/* For Very Small Screens */
 @media (max-width: 480px) {
-    .navbar {
-        padding: 10px 5%;
-    }
-
-    .navbar .logo {
-        width: 80px;
-    }
-
-    .navbar-menu {
-        gap: 6px;
-        font-size: 12px;
-    }
-
-    .navbar-right {
-        gap: 10px;
-    }
-
-    .navbar button {
-        padding: 5px 10px;
-        font-size: 10px;
+    .navbar .profile img {
+        width: 35px;
+        height: 35px;
     }
 }
